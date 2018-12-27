@@ -39,7 +39,9 @@ You're reading it!
 In this part, PCL's StatisticalOutlierRemoval filter is first applied to noisy point cloud data, where the number of neighboring points to analyze is set to 20 and threshold scale factor as 0.1, then a Voxel Grid Downsampling Filter is used to derive a point cloud that has fewer points but should still do a good job of representing the input point cloud as a whole.  Pass Through Filter is created to select a region of interest to remove some of the excess data, and RANSAC Plane Segmentation to identify the table from the objects on it.
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.
 To use PCL's Euclidean Clustering algorithm to segment objects, first construct a k-d tree from the cloud_objects point cloud, then extract indices for each of the discovered clusters.  For visualization, create new cloud containing all clusters, each with unique color, and a new publisher called /pcl_cluster for the cluster cloud.
-#### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
+#### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
+Thanks for the first review!  The color histogram and the normal histogram should be processed differently: For the color histogram, the range for color pixels is the default range (0, 256); but for a normal vector, the bins_range should be updated to None accordingly to make sure to get some information from the normal vector.
+
 Here the sensor_stick model is used to analyze and record each object of the PR2 project.  After launching the Gazebo environment:
 
 roslaunch sensor_stick training.launch
