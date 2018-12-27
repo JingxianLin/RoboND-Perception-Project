@@ -52,15 +52,18 @@ the point cloud features will be saved in trainging_set.sav; to start training, 
 
 python train_svm.py
 
-and save the final model to model.sav.
+and save the final model to model.sav.  An accuracy of 98% (+/- 11%) is achieved, with a linear kernel and C = 0.1, shown in the following confusion matrix.
 
-![demo-1](https://user-images.githubusercontent.com/20687560/28748231-46b5b912-7467-11e7-8778-3095172b7b19.png)
+![demo-1](figure1.png)
+![demo-2](figure2.png)
 
 ### Pick and Place Setup
 
 #### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
 
 
-![demo-2](https://user-images.githubusercontent.com/20687560/28748286-9f65680e-7468-11e7-83dc-f1a32380b89c.png)
+![demo-3](1.png)
+![demo-4](2.png)
+![demo-5](3.png)
 
 Spend.
