@@ -38,9 +38,21 @@ You're reading it!
 #### 1. Complete Exercise 1 steps. Pipeline for filtering and RANSAC plane fitting implemented.
 In this part, PCL's StatisticalOutlierRemoval filter is first applied to noisy point cloud data, where the number of neighboring points to analyze is set to 20 and threshold scale factor as 0.1, then a Voxel Grid Downsampling Filter is used to derive a point cloud that has fewer points but should still do a good job of representing the input point cloud as a whole.  Pass Through Filter is created to select a region of interest to remove some of the excess data, and RANSAC Plane Segmentation to identify the table from the objects on it.
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.
-To use PCL's Euclidean Clustering algorithm to segment objects, first construct a k-d tree from the cloud_objects point cloud, then extract indices for each of the discovered clusters.  For visualization, create new cloud containing all clusters, each with unique color.
+To use PCL's Euclidean Clustering algorithm to segment objects, first construct a k-d tree from the cloud_objects point cloud, then extract indices for each of the discovered clusters.  For visualization, create new cloud containing all clusters, each with unique color, and a new publisher called /pcl_cluster for the cluster cloud.
 #### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
-Here.
+Here the sensor_stick model is used to analyze and record each object of the PR2 project.  After launching the Gazebo environment:
+
+roslaunch sensor_stick training.launch
+
+and running the script:
+
+rosrun sensor_stick capture_features.py
+
+the point cloud features will be saved in trainging_set.sav; to start training, run:
+
+python train_svm.py
+
+and save the final model to model.sav.
 
 ![demo-1](https://user-images.githubusercontent.com/20687560/28748231-46b5b912-7467-11e7-8778-3095172b7b19.png)
 
