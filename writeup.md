@@ -60,10 +60,18 @@ and save the final model to model.sav.  An accuracy of 98% (+/- 11%) is achieved
 ### Pick and Place Setup
 
 #### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
+Include object recognition code to perception pipeline, then test with the actual project scene to see if recognition code is sucessful.  After running:
 
+roslaunch pr2_robot pick_place_project.launch
+
+and
+
+rosrun pr2_robot project-template.py
+
+in three different scenarios, output_1.yaml, output_2.yaml, and output_3.yaml are generated, and correponding screenshots are displayed below.
 
 ![demo-3](1.png)
 ![demo-4](2.png)
 ![demo-5](3.png)
 
-Spend.
+For test1.world, 100% (3/3) objects are correctly identified; test2.world, 100% (5/5) identified; but for test3.world, only 87.5% (7/8) are correctly identified, because glue is blocked by book.  The performance of object recognition can be improved by training a CNN model of deep learning.
