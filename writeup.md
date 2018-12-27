@@ -54,8 +54,8 @@ python train_svm.py
 
 and save the final model to model.sav.  An accuracy of 98% (+/- 11%) is achieved, with a linear kernel and C = 0.1, shown in the following confusion matrix.
 
-![demo-1](figure1.png)
-![demo-2](figure2.png)
+![demo-1](figure_1.png)
+![demo-2](figure_2.png)
 
 ### Pick and Place Setup
 
