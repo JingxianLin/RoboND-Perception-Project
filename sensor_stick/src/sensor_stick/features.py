@@ -69,6 +69,6 @@ def compute_normal_histograms(normal_cloud, nbins=32):
 
     # Generate random features for demo mode.  
     # Replace normed_features with your feature vector
-    normed_features = create_hist(norm_x_vals, norm_y_vals, norm_z_vals, nbins)#np.random.random(96)
+    normed_features = create_hist(norm_x_vals, norm_y_vals, norm_z_vals, nbins, None)#np.random.random(96)
 
     return normed_features
