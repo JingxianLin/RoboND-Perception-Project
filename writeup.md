@@ -36,11 +36,11 @@ You're reading it!
 
 ### Exercise 1, 2 and 3 pipeline implemented
 #### 1. Complete Exercise 1 steps. Pipeline for filtering and RANSAC plane fitting implemented.
-
-#### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  
+In this part, PCL's StatisticalOutlierRemoval filter is first applied to noisy point cloud data, where the number of neighboring points to analyze is set to 20 and threshold scale factor as 0.1, then a Voxel Grid Downsampling Filter is used to derive a point cloud that has fewer points but should still do a good job of representing the input point cloud as a whole.  Pass Through Filter is created to select a region of interest to remove some of the excess data, and RANSAC Plane Segmentation to identify the table from the objects on it.
+#### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.
 
 #### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
-Here is an example of how to include an image in your writeup.
+Here.
 
 ![demo-1](https://user-images.githubusercontent.com/20687560/28748231-46b5b912-7467-11e7-8778-3095172b7b19.png)
 
@@ -51,7 +51,4 @@ Here is an example of how to include an image in your writeup.
 And here's another image! 
 ![demo-2](https://user-images.githubusercontent.com/20687560/28748286-9f65680e-7468-11e7-83dc-f1a32380b89c.png)
 
-Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
-
-
-
+Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.
